@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const PostSchema = new Schema({
-    users: {
+    user: {
         type: Schema.Types.ObjectId,
         ref: 'users'
     },
@@ -39,12 +39,12 @@ const PostSchema = new Schema({
         },
         date: {
             type: Date,
-            defualt: Date.now
+            default: Date.now
         }
     }],
     date: {
         type: Date,
-        defualt: Date.now
+        default: Date.now
     }
 });
 
