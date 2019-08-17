@@ -10,7 +10,10 @@ const Login = () => {
   const { email, password } = formData;
 
   const onChange = e =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
 
   const onSubmit = async e => {
     e.preventDefault();
@@ -20,10 +23,10 @@ const Login = () => {
 
   return (
     <Fragment>
-      <h1 className="large text-primary">Sign In</h1>
+      <h1 className="large text-primary"> Sign In </h1>{' '}
       <p className="lead">
-        <i className="fas fa-user"></i> Sign Into Your Account
-      </p>
+        <i className="fas fa-user"> </i> Sign Into Your Account{' '}
+      </p>{' '}
       <form className="form" onSubmit={e => onSubmit(e)}>
         <div className="form-group">
           <input
@@ -34,7 +37,7 @@ const Login = () => {
             onChange={e => onChange(e)}
             required
           />
-        </div>
+        </div>{' '}
         <div className="form-group">
           <input
             type="password"
@@ -46,12 +49,11 @@ const Login = () => {
             required
           />
         </div>
-
         <input type="submit" className="btn btn-primary" value="Login" />
-      </form>
+      </form>{' '}
       <p className="my-1">
-        Don't have an account? <Link to="/register">Sign Up</Link>
-      </p>
+        Don 't have an account? <Link to="/register">Sign Up</Link>{' '}
+      </p>{' '}
     </Fragment>
   );
 };
