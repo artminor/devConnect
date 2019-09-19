@@ -60,7 +60,7 @@ const Login = ({ login }) => {
   );
 };
 
-Login.PropTypes = {
+Login.propTypes = {
   login: PropTypes.func.isRequired
 };
 
