@@ -1,6 +1,8 @@
 import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { createProfile, getCurrentProfile } from '../../actions/profile';
 
 const CreateProfile = props => {
   const [formData, setFormData] = useState({
@@ -34,6 +36,11 @@ const CreateProfile = props => {
     youtube,
     instagram
   } = formData;
+
+  const onSubmit = e => {
+    e.preventDefault();
+    createProfile(formData, history);
+  };
 
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
