@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 
 const Dashboard = ({
   getCurrentProfile,
-  auth,
-  profile: { profile, laoding }
+  auth: { user },
+  profile: { profile, loading }
 }) => {
   useEffect(() => {
     getCurrentProfile();
@@ -18,23 +18,23 @@ const Dashboard = ({
     <Spinner />
   ) : (
     <Fragment>
-      <h1 className="large text-primary">Dashboard</h1>
+      <h1 className="large text-primary"> Dashboard </h1>{' '}
       <p className="lead">
-        <i className="fas fa-user"></i>Welcome {user && user.name}
-      </p>
+        <i className="fas fa-user"> </i>Welcome {user && user.name}{' '}
+      </p>{' '}
       {profile !== null ? (
-        <Fragment>has</Fragment>
+        <Fragment> has </Fragment>
       ) : (
         <Fragment>
           <p>
             You have not yet setup a profile, please add info to setup your
-            profile.
-          </p>
+            profile.{' '}
+          </p>{' '}
           <Link to="/create-profile" className="btn btn-primary my-1">
-            Create Profile
-          </Link>
+            Create Profile{' '}
+          </Link>{' '}
         </Fragment>
-      )}
+      )}{' '}
     </Fragment>
   );
 };
@@ -45,9 +45,14 @@ Dashboard.propTypes = {
   profile: PropTypes.object.isRequired
 };
 
-const mapStateToProps = state => ({ auth: state.auth, profile: state.profile });
+const mapStateToProps = state => ({
+  auth: state.auth,
+  profile: state.profile
+});
 
 export default connect(
   mapStateToProps,
-  { getCurrentProfile }
+  {
+    getCurrentProfile
+  }
 )(Dashboard);

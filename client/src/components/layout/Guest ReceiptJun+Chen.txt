@@ -1,0 +1,10 @@
+========================================================
+Guest Account Receipt                2019-09-30 12:29:30
+--------------------------------------------------------
+Guest Name:       Jun Chen
+Guest Company:    
+Account Username: 9089670143
+Account Password: 91860249
+Account Expires:  Tuesday, 01 October 2019, 12:29 AM
+Account Role:     [Guest]
+========================================================
