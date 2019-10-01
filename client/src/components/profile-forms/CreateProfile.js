@@ -35,6 +35,9 @@ const CreateProfile = props => {
     instagram
   } = formData;
 
+  const onChange = e =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
   return (
     <Fragment>
       <h1 className="large text-primary">Create Your Profile</h1>
