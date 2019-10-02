@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { createProfile, getCurrentProfile } from '../../actions/profile';
 
-const CreateProfile = props => {
+const CreateProfile = ({ createProfile }) => {
   const [formData, setFormData] = useState({
     company: '',
     website: '',
@@ -213,6 +213,9 @@ const CreateProfile = props => {
   );
 };
 
-CreateProfile.propTypes = {};
+CreateProfile.propTypes = { createProfile: PropTypes.func.isRequired };
 
-export default CreateProfile;
+export default connect(
+  null,
+  { createProfile }
+)(CreateProfile);
